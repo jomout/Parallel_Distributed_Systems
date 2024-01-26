@@ -18,7 +18,7 @@ void measureTimeCUDAEvent(cudaEvent_t start, cudaEvent_t stop) {
 
 // Initialize Ising model with random initial state
 void initialize(int* lattice, int n) {
-    srand(1);
+    srand(time(NULL));
     // Random +1 or -1
     for (int i = 0; i < n * n; i++) {
         lattice[i] = rand() % 2 * 2 - 1;
